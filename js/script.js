@@ -19,17 +19,42 @@ var lastNameOriginalList = [
     'granger'
 ];
 
-// dichiaro la variabile che conterrà il cognome inserito dall'utente, usando toLowerCase e trim per correggere eventuali upercase letters o spazi
-var userLastName = prompt('Inserisci il tuo cognome').toLowerCase().trim();
+// stampo la lista non ordinata e senza il cognome inserito dall'utente
+// Creazione del ciclo for per inserire i cognomi nella lista in HTML
 
-// inserisco nell lista originale il cognome inserito dall'utente
-lastNameOriginalList.push(userLastName);
+// assegnazione variabile unItems
+var unItems = '';
+for (var i = 0; i < lastNameOriginalList.length; i++) {
+    // creazione di items (elemento che andrà inserito in HTML)
+    unItems += '<li>' + lastNameOriginalList[i] + '</li>';
+}
 
-// assegno alla variabile lastNameOrderedList il valore del sort in modo tale da non modificare sovrascrivendo la lista originale
-var lastNameOrderedList = lastNameOriginalList.sort();
+// stampo la lista originale
+document.getElementById('last-name-un-list').innerHTML = unItems;
 
-// stampo la lista ordinata
-console.log(lastNameOrderedList);   
-
-// stampo la posizione del cognome inserito dall'utente, aggiungendo 1 per renderlo in forma più 'umana'
-console.log('Il cognome che hai inserito è il ' + (lastNameOrderedList.indexOf(userLastName) + 1) + '°' + ' elemento.' );
+function myFunction() {
+    
+    // dichiaro la variabile che conterrà il cognome inserito dall'utente, usando toLowerCase e trim per correggere eventuali upercase letters o spazi
+    var userLastName = prompt('Inserisci il tuo cognome').toLowerCase().trim();
+    
+    // inserisco nell lista originale il cognome inserito dall'utente
+    lastNameOriginalList.push(userLastName);
+    
+    // assegno alla variabile lastNameOrderedList il valore del sort in modo tale da non modificare sovrascrivendo la lista originale
+    var lastNameOrderedList = lastNameOriginalList.sort();
+    
+    // Creazione del ciclo for per inserire i cognomi nella lista in HTML
+    
+    // assegnazione variabile items
+    var items = '';
+    for (var i = 0; i < lastNameOrderedList.length; i++) {
+        // creazione di items (elemento che andrà inserito in HTML)
+        items += '<li>' + lastNameOrderedList[i] + '</li>';
+    }
+    
+    // stampo la lista ordinata
+    document.getElementById('last-name-od-list').innerHTML = items;
+    
+    // stampo la posizione del cognome inserito dall'utente, aggiungendo 1 per renderlo in forma più 'umana'
+    document.getElementById('position').innerHTML = 'Il cognome che hai inserito è il ' + (lastNameOrderedList.indexOf(userLastName) + 1) + '°' + ' elemento.';
+}

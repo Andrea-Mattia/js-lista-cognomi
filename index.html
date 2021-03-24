@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Lista Cognomi</title>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     
-    
+    <header>
+        <h1>Lista dei cognomi</h1>
+    </header>
+  
+    <main>
+
+        <h2 id="position">Aspettando l'input...</h2>
+
+        <button onclick="myFunction()">Clicca per inserire il tuo cognome</button>
+        
+        <div class="lists">
+            <div>
+                <h3>Lista non ordinata</h3>
+                <ul id="last-name-un-list"></ul>
+            </div>
+            <div>
+                <h3>Lista ordinata</h3>
+                <ul id="last-name-od-list"></ul>
+            </div>
+        </div>
+
+    </main>
+ 
 
     <!-- JS -->
     <script src="./js/script.js"></script>
